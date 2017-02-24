@@ -25,10 +25,10 @@ public class Cell {
 	private boolean east = false;
 	private boolean west = false;
 	private boolean north = false;
-	private boolean southFixed = true;
-	private boolean eastFixed = true;
-	private boolean westFixed = true;
-	private boolean northFixed = true;
+	private boolean southFixed = false;
+	private boolean eastFixed = false;
+	private boolean westFixed = false;
+	private boolean northFixed = false;
 
 	/**
 	 * List of the direct neighboor cells
