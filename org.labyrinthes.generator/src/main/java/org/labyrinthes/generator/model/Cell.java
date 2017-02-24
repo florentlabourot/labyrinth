@@ -25,10 +25,10 @@ public class Cell {
 	private boolean east = false;
 	private boolean west = false;
 	private boolean north = false;
-	private boolean southIn = true;
-	private boolean eastIn = true;
-	private boolean westIn = true;
-	private boolean northIn = true;
+	private boolean southFixed = true;
+	private boolean eastFixed = true;
+	private boolean westFixed = true;
+	private boolean northFixed = true;
 
 	/**
 	 * List of the direct neighboor cells
@@ -97,36 +97,38 @@ public class Cell {
 		this.north = north;
 	}
 
-	public boolean isSouthIn() {
-		return southIn;
+
+
+	public boolean isSouthFixed() {
+		return southFixed;
 	}
 
-	public void setSouthIn(boolean southIn) {
-		this.southIn = southIn;
+	public void setSouthFixed(boolean southFixed) {
+		this.southFixed = southFixed;
 	}
 
-	public boolean isEastIn() {
-		return eastIn;
+	public boolean isEastFixed() {
+		return eastFixed;
 	}
 
-	public void setEastIn(boolean eastIn) {
-		this.eastIn = eastIn;
+	public void setEastFixed(boolean eastFixed) {
+		this.eastFixed = eastFixed;
 	}
 
-	public boolean isWestIn() {
-		return westIn;
+	public boolean isWestFixed() {
+		return westFixed;
 	}
 
-	public void setWestIn(boolean westIn) {
-		this.westIn = westIn;
+	public void setWestFixed(boolean westFixed) {
+		this.westFixed = westFixed;
 	}
 
-	public boolean isNorthIn() {
-		return northIn;
+	public boolean isNorthFixed() {
+		return northFixed;
 	}
 
-	public void setNorthIn(boolean northIn) {
-		this.northIn = northIn;
+	public void setNorthFixed(boolean northFixed) {
+		this.northFixed = northFixed;
 	}
 
 	public List<Cell> getDirectNeighboors() {
@@ -134,7 +136,7 @@ public class Cell {
 	}
 	
 	public boolean hasExternal() {
-		return !(eastIn && westIn && southIn && northIn);
+		return !(eastFixed && westFixed && southFixed && northFixed);
 	}
 	
 }
