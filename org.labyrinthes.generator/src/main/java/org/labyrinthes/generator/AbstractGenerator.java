@@ -10,7 +10,7 @@ public abstract class AbstractGenerator {
 	 */
 	protected Cell start;
 
-	protected int wallToOpen;
+	protected int nbWallToOpen;
 
 	public AbstractGenerator() {
 
@@ -23,8 +23,8 @@ public abstract class AbstractGenerator {
 				ret.createCell(j, i);
 			}
 		}
-		start = defineStartCell();
-		wallToOpen = defineWallToOpen();
+		start = defineStartCell(ret);
+		nbWallToOpen = defineNbWallToOpen(ret);
 		return ret;
 	}
 
@@ -32,7 +32,7 @@ public abstract class AbstractGenerator {
 		Labyrinth ret = initTable(width, height);
 		int count = 0;
 		int iter = 0;
-		while (count < wallToOpen) {
+		while (count < nbWallToOpen) {
 			if (openWall(ret)) {
 				count++;
 			}
@@ -46,7 +46,7 @@ public abstract class AbstractGenerator {
 	/**
 	 * Define protected attribute start Cell
 	 */
-	public abstract Cell defineStartCell();
+	public abstract Cell defineStartCell(Labyrinth laby);
 
-	public abstract int defineWallToOpen();
+	public abstract int defineNbWallToOpen(Labyrinth laby);
 }

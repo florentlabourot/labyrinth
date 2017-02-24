@@ -80,6 +80,10 @@ public class Labyrinth {
 		}
 		return valid;
 	}
+	
+	public Cell getCell(int x, int y){
+		return table[y][x];
+	}
 
 	/**
 	 * Display the labyrinth representation on an PrintStream output
