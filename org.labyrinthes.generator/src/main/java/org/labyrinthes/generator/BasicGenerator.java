@@ -12,10 +12,9 @@ public class BasicGenerator extends AbstractGenerator {
 		final int x = (int) (Math.random() * ret.getWidth());
 		int rand = (int) (Math.random() * Direction.values().length);
 		final Direction wall = Direction.values()[rand];
+		System.out.println("rand:"+  rand + " direction "+ wall + " x: " + x + " y: " + y);
 		final Cell current = ret.getCell(x, y);
-		if (current.isUsed()) {
-			return false;
-		}
+		
 		Cell neighbour = null;
 		switch (wall) {
 		case North: {
@@ -64,7 +63,6 @@ public class BasicGenerator extends AbstractGenerator {
 			}
 			neighbour.setWest(true);
 			current.setEast(true);
-			updateId(neighbour.getId(), current.getId(), ret);
 			break;
 		}
 		default:
@@ -72,12 +70,18 @@ public class BasicGenerator extends AbstractGenerator {
 		}
 		current.addDirectNeighbour(neighbour);
 		neighbour.addDirectNeighbour(current);
+		updateId(neighbour.getId(), current.getId(), ret);
 		return true;
 	}
 
 	@Override
 	public Cell defineStartCell(Labyrinth laby) {
 		return laby.getCell(0, 0);
+	}
+
+	@Override
+	public Cell defineEndCell(Labyrinth laby) {
+		return laby.getCell(laby.getWidth() - 1, laby.getHeight() - 1);
 	}
 
 	@Override
