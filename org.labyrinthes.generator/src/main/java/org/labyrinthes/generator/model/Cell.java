@@ -16,7 +16,7 @@ public class Cell {
 	 */
 	private int x;
 	private int y;
-	private int num;
+	private int id;
 
 	/**
 	 * wall in each side of the cell
@@ -39,10 +39,10 @@ public class Cell {
 	 */
 	private final List<Cell> directNeighboors = new ArrayList<Cell>();
 
-	public Cell(final int x, final int y, final int num) {
+	public Cell(final int x, final int y, final int id) {
 		this.x = x;
 		this.y = y;
-		this.num = num;
+		this.id = id;
 	}
 
 	public int getX() {
@@ -61,12 +61,12 @@ public class Cell {
 		this.y = y;
 	}
 
-	public int getNum() {
-		return num;
+	public int getId() {
+		return id;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public boolean isSouth() {
