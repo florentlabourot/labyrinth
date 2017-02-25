@@ -93,7 +93,7 @@ public class Labyrinth {
 	public void print(PrintStream out) {
 		for (int i = 0; i < height; ++i) {
 			for (int j = 0; j < width; ++j) {
-				out.print(table[i][j].getNum() + " ");
+				out.print(table[i][j].getId() + " ");
 			}
 			out.println("");
 		}

@@ -10,9 +10,11 @@ public class BasicGenerator extends AbstractGenerator {
 		final int y = (int) (Math.random() * ret.getHeight());
 		final int x = (int) (Math.random() * ret.getWidth());
 		final int wall = (int) (Math.random() * 4);
-		final Cell current = ret.getCell(x, y); 
-		//if (! current.)
-		return false;
+		final Cell current = ret.getCell(x, y);
+		if (current.isUsed()) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override
