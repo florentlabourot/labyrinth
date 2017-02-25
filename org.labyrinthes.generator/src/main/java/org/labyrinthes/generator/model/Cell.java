@@ -35,9 +35,9 @@ public class Cell {
 	
 	
 	/**
-	 * List of the direct neighboor cells
+	 * List of the direct neighbour cells
 	 */
-	private final List<Cell> directNeighboors = new ArrayList<Cell>();
+	private final List<Cell> directNeighbours = new ArrayList<Cell>();
 
 	public Cell(final int x, final int y, final int id) {
 		this.x = x;
@@ -135,8 +135,8 @@ public class Cell {
 		this.northFixed = northFixed;
 	}
 
-	public List<Cell> getDirectNeighboors() {
-		return directNeighboors;
+	public List<Cell> getDirectNeighbours() {
+		return directNeighbours;
 	}
 	
 	public boolean hasExternal() {
@@ -149,6 +149,10 @@ public class Cell {
 
 	public void setUsed(boolean used) {
 		this.used = used;
+	}
+
+	public void addDirectNeighbour(Cell neighbour) {
+		this.directNeighbours.add(neighbour);
 	}
 
 }

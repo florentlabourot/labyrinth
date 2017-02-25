@@ -40,6 +40,16 @@ public abstract class AbstractGenerator {
 		}
 		return ret;
 	}
+	
+	protected void updateId (final int orig, final int dest, Labyrinth ret){
+		for (int i=0; i < ret.getHeight(); ++i){
+			for (int j = 0; j < ret.getWidth(); ++j){
+				if (ret.getCell(j, i).getId() == orig){
+					ret.getCell(j, i).setId(dest);
+				}
+			}
+		}
+	}
 
 	public abstract boolean openWall(Labyrinth ret);
 
