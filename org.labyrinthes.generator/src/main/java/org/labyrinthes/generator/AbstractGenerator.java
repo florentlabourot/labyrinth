@@ -9,6 +9,7 @@ public abstract class AbstractGenerator {
 	 * Start point of the labyrinth
 	 */
 	protected Cell start;
+	protected Cell end;
 
 	protected int nbWallToOpen;
 
@@ -38,6 +39,8 @@ public abstract class AbstractGenerator {
 			}
 			iter++;
 		}
+		end = defineEndCell(ret);
+		end.setAsEndCell();
 		return ret;
 	}
 	
@@ -58,5 +61,7 @@ public abstract class AbstractGenerator {
 	 */
 	public abstract Cell defineStartCell(Labyrinth laby);
 
+	public abstract Cell defineEndCell(Labyrinth laby);
+	
 	public abstract int defineNbWallToOpen(Labyrinth laby);
 }
