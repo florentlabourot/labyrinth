@@ -30,10 +30,8 @@ public class Cell {
 	private boolean westFixed = false;
 	private boolean northFixed = false;
 
-
 	private boolean used = false;
-	
-	
+
 	/**
 	 * List of the direct neighbour cells
 	 */
@@ -101,8 +99,6 @@ public class Cell {
 		this.north = north;
 	}
 
-
-
 	public boolean isSouthFixed() {
 		return southFixed;
 	}
@@ -138,11 +134,11 @@ public class Cell {
 	public List<Cell> getDirectNeighbours() {
 		return directNeighbours;
 	}
-	
+
 	public boolean hasExternal() {
 		return (eastFixed || westFixed || southFixed || northFixed);
 	}
-	
+
 	public boolean isUsed() {
 		return used;
 	}
@@ -155,4 +151,15 @@ public class Cell {
 		this.directNeighbours.add(neighbour);
 	}
 
+	public void setAsEndCell() {
+		if (eastFixed) {
+			this.east = true;
+		} else if (northFixed) {
+			this.north = true;
+		} else if (westFixed) {
+			this.west = true;
+		} else if (southFixed) {
+			this.south = true;
+		}
+	}
 }
