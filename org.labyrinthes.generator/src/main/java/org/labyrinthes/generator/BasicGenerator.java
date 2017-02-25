@@ -64,6 +64,7 @@ public class BasicGenerator extends AbstractGenerator {
 			}
 			neighbour.setWest(true);
 			current.setEast(true);
+			updateId(neighbour.getId(), current.getId(), ret);
 			break;
 		}
 		default:
