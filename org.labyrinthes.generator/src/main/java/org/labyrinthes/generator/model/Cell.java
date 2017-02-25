@@ -30,6 +30,10 @@ public class Cell {
 	private boolean westFixed = false;
 	private boolean northFixed = false;
 
+
+	private boolean used = false;
+	
+	
 	/**
 	 * List of the direct neighboor cells
 	 */
@@ -136,7 +140,15 @@ public class Cell {
 	}
 	
 	public boolean hasExternal() {
-		return !(eastFixed && westFixed && southFixed && northFixed);
+		return (eastFixed || westFixed || southFixed || northFixed);
 	}
 	
+	public boolean isUsed() {
+		return used;
+	}
+
+	public void setUsed(boolean used) {
+		this.used = used;
+	}
+
 }
