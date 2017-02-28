@@ -12,7 +12,6 @@ public class BasicGenerator extends AbstractGenerator {
 		final int x = (int) (Math.random() * ret.getWidth());
 		int rand = (int) (Math.random() * Direction.values().length);
 		final Direction wall = Direction.values()[rand];
-		System.out.println("rand:"+  rand + " direction "+ wall + " x: " + x + " y: " + y);
 		final Cell current = ret.getCell(x, y);
 		
 		Cell neighbour = null;
