@@ -1,6 +1,6 @@
 package org.labyrinthes.generator;
 
-import org.labyrinthes.generator.model.Labyrinth;
+import org.labyrinthes.common.model.Labyrinth;
 import org.labyrinthes.output.ImageWriter;
 
 import junit.framework.TestCase;

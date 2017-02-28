@@ -1,4 +1,4 @@
-package org.labyrinthes.generator.model;
+package org.labyrinthes.common.model;
 
 import java.util.ArrayList;
 import java.util.List;

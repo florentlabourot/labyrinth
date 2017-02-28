@@ -8,8 +8,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import org.labyrinthes.generator.model.Cell;
-import org.labyrinthes.generator.model.Labyrinth;
+import org.labyrinthes.common.model.Cell;
+import org.labyrinthes.common.model.Labyrinth;
 
 public class ImageWriter {
 	private int cellSize = 25;

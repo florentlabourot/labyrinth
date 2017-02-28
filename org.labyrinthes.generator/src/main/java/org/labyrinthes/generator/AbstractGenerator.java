@@ -1,7 +1,7 @@
 package org.labyrinthes.generator;
 
-import org.labyrinthes.generator.model.Cell;
-import org.labyrinthes.generator.model.Labyrinth;
+import org.labyrinthes.common.model.Cell;
+import org.labyrinthes.common.model.Labyrinth;
 
 public abstract class AbstractGenerator {
 
