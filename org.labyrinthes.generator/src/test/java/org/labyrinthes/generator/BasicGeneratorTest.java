@@ -9,8 +9,8 @@ public class BasicGeneratorTest extends TestCase {
 
 	public void testLittleLabyrinth() {
 		BasicGenerator basicGenerator = new BasicGenerator();
-		Labyrinth labyrinth = basicGenerator.generate(4, 4);
-		labyrinth.print(System.out);
+		Labyrinth labyrinth = basicGenerator.generate(40, 40);
+		//labyrinth.print(System.out);
 		ImageWriter iw =new ImageWriter();
 		iw.prepare(labyrinth);
 		iw.write("test.png");
