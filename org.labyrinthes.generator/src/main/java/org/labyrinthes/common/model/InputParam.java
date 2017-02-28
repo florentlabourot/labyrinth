@@ -1,5 +1,5 @@
 package org.labyrinthes.common.model;
 
-public class Param {
+public class InputParam {
 
 }
