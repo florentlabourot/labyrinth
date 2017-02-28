@@ -162,4 +162,16 @@ public class Cell {
 			this.south = true;
 		}
 	}
+	
+	public void setAsStartCell() {
+		if (northFixed) {
+			this.north = true;
+		} else if (westFixed) {
+			this.west = true;
+		} else if (eastFixed) {
+			this.east = true;
+		} else if (southFixed) {
+			this.south = true;
+		}
+	}
 }
