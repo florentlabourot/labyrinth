@@ -24,7 +24,7 @@ public abstract class AbstractGenerator {
 				ret.createCell(j, i);
 			}
 		}
-		start = defineStartCell(ret);
+
 		nbWallToOpen = defineNbWallToOpen(ret);
 		return ret;
 	}
@@ -40,14 +40,16 @@ public abstract class AbstractGenerator {
 			iter++;
 		}
 		end = defineEndCell(ret);
+		start = defineStartCell(ret);
 		end.setAsEndCell();
+		start.setAsStartCell();
 		return ret;
 	}
-	
-	protected void updateId (final int orig, final int dest, Labyrinth ret){
-		for (int i=0; i < ret.getHeight(); ++i){
-			for (int j = 0; j < ret.getWidth(); ++j){
-				if (ret.getCell(j, i).getId() == orig){
+
+	protected void updateId(final int orig, final int dest, Labyrinth ret) {
+		for (int i = 0; i < ret.getHeight(); ++i) {
+			for (int j = 0; j < ret.getWidth(); ++j) {
+				if (ret.getCell(j, i).getId() == orig) {
 					ret.getCell(j, i).setId(dest);
 				}
 			}
@@ -62,6 +64,6 @@ public abstract class AbstractGenerator {
 	public abstract Cell defineStartCell(Labyrinth laby);
 
 	public abstract Cell defineEndCell(Labyrinth laby);
-	
+
 	public abstract int defineNbWallToOpen(Labyrinth laby);
 }
