@@ -9,4 +9,6 @@ package org.labyrinthes.common;
 public interface Command {
 
 	public void execute();
+	
+	public CommandType getType();
 }
