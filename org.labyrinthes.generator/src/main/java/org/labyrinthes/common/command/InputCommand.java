@@ -1,4 +1,4 @@
-package org.labyrinthes.common;
+package org.labyrinthes.common.command;
 
 import org.labyrinthes.common.model.InputParam;
 

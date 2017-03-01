@@ -1,4 +1,4 @@
-package org.labyrinthes.common;
+package org.labyrinthes.common.command;
 
 /**
  * Command used for Command/Processor pattern

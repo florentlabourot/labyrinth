@@ -1,4 +1,4 @@
-package org.labyrinthes.common;
+package org.labyrinthes.common.command;
 
 import java.util.ArrayList;
 import java.util.List;
