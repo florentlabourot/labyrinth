@@ -17,4 +17,5 @@ public abstract class InputCommand implements Command {
 	}
 	
 
+
 }

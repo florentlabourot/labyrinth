@@ -59,4 +59,18 @@ public class CommandProcessor {
 			command.execute();
 		}
 	}
+
+	public InputParam getInputParam() {
+		return inputParam;
+	}
+
+	public GenerateResult getGenerateResult() {
+		return generateResult;
+	}
+
+	public OutputResult getOutputResult() {
+		return outputResult;
+	}
+	
+	
 }
