@@ -1,9 +1,12 @@
 package org.labyrinthes.generator;
 
+import org.labyrinthes.common.command.GenerateCommand;
 import org.labyrinthes.common.model.Cell;
+import org.labyrinthes.common.model.GenerateResult;
+import org.labyrinthes.common.model.InputParam;
 import org.labyrinthes.common.model.Labyrinth;
 
-public abstract class AbstractGenerator {
+public abstract class AbstractGenerator extends GenerateCommand {
 
 	/**
 	 * Start point of the labyrinth
@@ -13,11 +16,27 @@ public abstract class AbstractGenerator {
 
 	protected int nbWallToOpen;
 
+	protected InputParam inputParam;
+	protected GenerateResult generateResult;
+	
+	public void setInputParam(InputParam input){
+		this.inputParam = input;
+	}
+
+	public void setGenerateResult(GenerateResult result){
+		this.generateResult = result;
+	}
+	
 	public AbstractGenerator() {
 
 	}
 
-	public Labyrinth initTable(int width, int height) {
+	public void execute(){
+		Labyrinth labyrinth = generate(inputParam.getWidth(), inputParam.getHeight());
+		generateResult.addLabyrinth(labyrinth);
+	}
+	
+	private Labyrinth initTable(int width, int height) {
 		Labyrinth ret = new Labyrinth(width, height);
 		for (int i = 0; i < height; ++i) {
 			for (int j = 0; j < width; ++j) {

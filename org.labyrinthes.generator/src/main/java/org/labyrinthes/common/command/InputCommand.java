@@ -5,7 +5,7 @@ import org.labyrinthes.common.model.InputParam;
 public abstract class InputCommand implements Command {
 
 	public abstract void setInputParam(InputParam param);
-
+	
 	public CommandType getType() {
 		return CommandType.Input;
 	}
@@ -16,6 +16,4 @@ public abstract class InputCommand implements Command {
 		}
 	}
 	
-
-
 }

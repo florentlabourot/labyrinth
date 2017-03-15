@@ -13,5 +13,6 @@ public interface Command {
 	public CommandType getType();
 
 	public void setArg(CommandArg commandArg);
+	
 
 }

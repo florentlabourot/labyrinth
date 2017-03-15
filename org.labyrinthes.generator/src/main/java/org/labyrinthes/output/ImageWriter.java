@@ -5,16 +5,25 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
+import org.labyrinthes.common.command.OutputCommand;
 import org.labyrinthes.common.model.Cell;
+import org.labyrinthes.common.model.GenerateResult;
+import org.labyrinthes.common.model.InputParam;
 import org.labyrinthes.common.model.Labyrinth;
+import org.labyrinthes.common.model.OutputResult;
 
-public class ImageWriter {
+public class ImageWriter extends OutputCommand{
+	
 	private int cellSize = 25;
 	private int margin = 50;
 	private BufferedImage bufferedImage;
+	private InputParam inputParam;
+	private GenerateResult generateResult;
+	private OutputResult outputResult;
 
 	public void prepare(Labyrinth labyrinth) {
 		final int width = labyrinth.getWidth() * cellSize + margin * 2;
@@ -71,5 +80,28 @@ public class ImageWriter {
 		}catch(final IOException ie){
 			ie.printStackTrace();
 		}
+	}
+
+	public void execute() {
+		List<Labyrinth> list = generateResult.getLabyrinths();
+		for (Labyrinth labyrinth : list) {
+			this.prepare(labyrinth);
+			this.write("test.png");
+		}
+	}
+
+	@Override
+	public void setInputParam(InputParam input) {
+		this.inputParam = input;
+	}
+
+	@Override
+	public void setGenerateResult(GenerateResult generateResult) {
+		this.generateResult = generateResult;
+	}
+
+	@Override
+	public void setOutputResult(OutputResult outputResult) {
+		this.outputResult = outputResult;
 	}
 }
