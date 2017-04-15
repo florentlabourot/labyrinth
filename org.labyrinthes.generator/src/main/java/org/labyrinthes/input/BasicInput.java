@@ -1,6 +1,9 @@
 package org.labyrinthes.input;
 
+
+
 import org.labyrinthes.common.command.InputCommand;
+import org.labyrinthes.common.model.Dimension;
 import org.labyrinthes.common.model.InputParam;
 
 public class BasicInput extends InputCommand {
@@ -8,15 +11,17 @@ public class BasicInput extends InputCommand {
 	private InputParam inputParam;
 	private int width;
 	private int height;
+	private int nb;
 
-	public BasicInput(int width, int height) {
+	public BasicInput(int width, int height, int nb) {
 		this.width = width;
 		this.height = height;
+		this.nb = nb;
 	}
 
 	public void execute() {
-		this.inputParam.setHeight(this.height);
-		this.inputParam.setWidth(this.width);
+		Dimension dimension = new Dimension(this.width, this.height);
+		this.inputParam.add(dimension);
 	}
 
 	@Override
