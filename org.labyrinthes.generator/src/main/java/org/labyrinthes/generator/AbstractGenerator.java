@@ -2,6 +2,7 @@ package org.labyrinthes.generator;
 
 import org.labyrinthes.common.command.GenerateCommand;
 import org.labyrinthes.common.model.Cell;
+import org.labyrinthes.common.model.Dimension;
 import org.labyrinthes.common.model.GenerateResult;
 import org.labyrinthes.common.model.InputParam;
 import org.labyrinthes.common.model.Labyrinth;
@@ -18,24 +19,29 @@ public abstract class AbstractGenerator extends GenerateCommand {
 
 	protected InputParam inputParam;
 	protected GenerateResult generateResult;
-	
-	public void setInputParam(InputParam input){
+
+	public void setInputParam(InputParam input) {
 		this.inputParam = input;
 	}
 
-	public void setGenerateResult(GenerateResult result){
+	public void setGenerateResult(GenerateResult result) {
 		this.generateResult = result;
 	}
-	
+
 	public AbstractGenerator() {
 
 	}
 
-	public void execute(){
-		Labyrinth labyrinth = generate(inputParam.getWidth(), inputParam.getHeight());
-		generateResult.addLabyrinth(labyrinth);
+	public void execute() {
+		int nbToGenerate = inputParam.getNbToGenerate();
+		inputParam.reset();
+		for (int i = 0; i < nbToGenerate; ++i) {
+			Dimension d= inputParam.getNextDimension();
+			Labyrinth labyrinth = generate(d.getWidth(), d.getHeight());
+			generateResult.addLabyrinth(labyrinth);
+		}
 	}
-	
+
 	private Labyrinth initTable(int width, int height) {
 		Labyrinth ret = new Labyrinth(width, height);
 		for (int i = 0; i < height; ++i) {
@@ -62,6 +68,8 @@ public abstract class AbstractGenerator extends GenerateCommand {
 		start = defineStartCell(ret);
 		end.setAsEndCell();
 		start.setAsStartCell();
+		ret.setStartCell(start);
+		ret.setEndCell(end);
 		return ret;
 	}
 
