@@ -1,6 +1,7 @@
 package org.labyrinthes.common.model;
 
 import java.io.PrintStream;
+import java.util.List;
 
 public class Labyrinth {
 	/**
@@ -11,6 +12,21 @@ public class Labyrinth {
 	protected final Cell[][] table;
 
 	protected int maxToOpen;
+	
+	protected Cell startCell;
+	protected Cell endCell;
+	
+	protected int depth;
+	private List<Cell> solutionWay;
+	
+	private String name;
+	
+	private int difficulty;
+	
+	
+	public List<Cell> getSolutionWay() {
+		return solutionWay;
+	}
 
 	/**
 	 * Unique constructor to have a labyrinth instance
@@ -51,6 +67,23 @@ public class Labyrinth {
 		return width;
 	}
 
+
+	public Cell getStartCell() {
+		return startCell;
+	}
+
+	public void setStartCell(Cell startCell) {
+		this.startCell = startCell;
+	}
+
+	public Cell getEndCell() {
+		return endCell;
+	}
+
+	public void setEndCell(Cell endCell) {
+		this.endCell = endCell;
+	}
+
 	/**
 	 * 
 	 * @return table containing each cell of the layrinth
@@ -85,6 +118,15 @@ public class Labyrinth {
 		return table[y][x];
 	}
 
+
+	public int getDepth() {
+		return depth;
+	}
+
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}
+
 	/**
 	 * Display the labyrinth representation on an PrintStream output
 	 * 
@@ -98,4 +140,27 @@ public class Labyrinth {
 			out.println("");
 		}
 	}
+
+	public void setSolutionWay(List<Cell> solutionWay) {
+		this.solutionWay = solutionWay;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
+	}
+	
+	
+
 }
