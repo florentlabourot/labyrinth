@@ -174,4 +174,19 @@ public class Cell {
 			this.south = true;
 		}
 	}
+	
+	public void setAsNormalBorderCell(){
+		if (northFixed) {
+			this.north = false;
+		} 
+		if (westFixed) {
+			this.west = false;
+		} 
+		if (eastFixed) {
+			this.east = false;
+		} 
+		if (southFixed) {
+			this.south = false;
+		}
+	}
 }
