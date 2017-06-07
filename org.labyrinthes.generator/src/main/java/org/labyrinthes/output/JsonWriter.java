@@ -56,6 +56,8 @@ public class JsonWriter extends AbstractOutputCommand {
 			jsonWriter.endObject();
 			jsonWriter.key("depth");
 			jsonWriter.value(labyrinth.getDepth());
+			jsonWriter.key("difficulty");
+			jsonWriter.value(labyrinth.getDifficulty());
 			jsonWriter.key("cells");
 			jsonWriter.array();
 			for (int i = 0; i < labyrinth.getHeight(); ++i) {
