@@ -18,8 +18,8 @@ public class GenTest extends TestCase {
 	public void testGenerator() {
 		for (Difficulty diff : Difficulty.values()) {
 			for (int i =0; i < 17; ++i){
-				
-				generateAGroup(diff, 12, i, i);
+				int nb = 6 +((int) (Math.random() * 5)*2);
+				generateAGroup(diff, nb, i, i);
 			}
 		}
 	}
@@ -30,7 +30,7 @@ public class GenTest extends TestCase {
 		commandProcessor.addCommand(new BasicGenerator());
 		commandProcessor.addCommand(new BasicMetaGenerator());
 		commandProcessor.addCommand(new BasicNameGenerator());
-		commandProcessor.addCommand(new ImageWriter());
+		//commandProcessor.addCommand(new ImageWriter());
 		commandProcessor.addCommand(new JsonWriter());
 		commandProcessor.addCommand(new CollectionJsonWriter());
 		commandProcessor.process();
