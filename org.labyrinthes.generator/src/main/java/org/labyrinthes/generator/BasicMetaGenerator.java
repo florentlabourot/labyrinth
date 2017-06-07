@@ -40,7 +40,7 @@ public class BasicMetaGenerator extends GenerateCommand {
 			System.out.println("prof : " + depth);
 			// System.out.println("nbChoice " + searchTree.getNbChoice());
 			float diff = (100 * depth) / (labyrinth.getHeight() * labyrinth.getWidth());
-			float diff2 = depth * 2 + diff;
+			float diff2 = depth * 2 + diff + ((labyrinth.getHeight() * labyrinth.getWidth()) / 4);
 			labyrinth.setDifficulty((int) diff2);
 			System.out.println(diff + "," + diff2);
 			if (diff > max) {
