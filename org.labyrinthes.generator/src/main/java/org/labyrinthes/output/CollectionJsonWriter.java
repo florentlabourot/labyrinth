@@ -8,12 +8,8 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.json.JSONWriter;
-import org.labyrinthes.common.command.OutputCommand;
 import org.labyrinthes.common.model.Constants;
-import org.labyrinthes.common.model.GenerateResult;
-import org.labyrinthes.common.model.InputParam;
 import org.labyrinthes.common.model.Labyrinth;
-import org.labyrinthes.common.model.OutputResult;
 
 public class CollectionJsonWriter extends AbstractOutputCommand {
 
@@ -21,6 +17,7 @@ public class CollectionJsonWriter extends AbstractOutputCommand {
 	public void execute() {
 		String output = getOuputDir();
 		List<Labyrinth> list = generateResult.getLabyrinths();
+		String name = (String)inputParam.get(Constants.OUTPUT);
 		StringBuffer filename = new StringBuffer(output);
 		filename.append("/list.json");
 		PrintWriter pw;
@@ -29,7 +26,7 @@ public class CollectionJsonWriter extends AbstractOutputCommand {
 			JSONWriter jsonWriter = new JSONWriter(pw);
 			jsonWriter.object();
 			jsonWriter.key("name");
-			jsonWriter.value(output);
+			jsonWriter.value(name);
 			if (inputParam.containsKey(Constants.COLOR) && inputParam.containsKey(Constants.COLOR_SHADOW)){
 				jsonWriter.key("wall");
 				jsonWriter.value((String)inputParam.get(Constants.COLOR));
