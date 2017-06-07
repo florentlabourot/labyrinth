@@ -45,18 +45,18 @@ public class LevelInput extends InputCommand {
 			max = new Dimension (7,9);
 			break;
 		case medium:
-			maxcell = 150;
+			maxcell = 200;
 			min = new Dimension (8,8);
-			max = new Dimension (12,14);
+			max = new Dimension (14,16);
 			break;
 		case hard:
-			maxcell = 300;
-			min = new Dimension (13,13);
-			max = new Dimension (17,19);
+			maxcell = 420;
+			min = new Dimension (14,14);
+			max = new Dimension (20,22);
 			break;
 		case very_hard:
 			maxcell = 2000;
-			min = new Dimension (18,18);
+			min = new Dimension (21,21);
 			max = new Dimension (40,40);
 			break;
 		default:
